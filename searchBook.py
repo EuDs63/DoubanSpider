@@ -122,5 +122,5 @@ def getRequest(tag):
 
 
 if __name__ == '__main__':
-    tag_require = "绘本"
+    tag_require = "文学"
     getRequest(tag_require)
