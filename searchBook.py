@@ -6,6 +6,7 @@ import time
 import proxy
 import user
 import logging
+from urllib.parse import quote
 
 
 # 获取网页数据
@@ -22,13 +23,10 @@ def get_web_data(url, headers, proxies=[]):
     return data
 
 
-def getResqutes():
-    # 获取诗词类图书的请求
-    # urls = ["https://book.douban.com/tag/%E8%AF%97%E8%AF%8D?start={}".format(str(i)) for i in
-    #         range(0, 20, 20)]  # 豆瓣分类图书每页20本，搜索一百本，每次搜索完一页，数字加20表示跳转到下一页继续搜索
-    # urls = ["https://www.douban.com/doulist/1264675/?start={}".format(str(i)) for i in
-    #         range(0, 500, 25)]  # 豆瓣分类图书每页25本，搜索五百本，每次搜索完一页，数字加25表示跳转到下一页继续搜索
-    urls = ["https://book.douban.com/tag/%E5%B0%8F%E8%AF%B4?start={}".format(str(i)) for i in
+def getRequest(tag):
+    tag_utf8 = tag.encode("utf-8")
+    tag_url = quote(tag_utf8)
+    urls = ["https://book.douban.com/tag/{}?start={}".format(tag_url, (i)) for i in
             range(0, 100, 20)]  # 豆瓣分类图书每页20本，搜索一百本，每次搜索完一页，数字加20表示跳转到下一页继续搜索
     for url in urls:
         # 每搜索1页20本书更换一次请求头信息和代理ip
@@ -119,9 +117,10 @@ def getResqutes():
                 }
                 print(result)
                 # 以json形式保存输出结果
-                with open('小说.json', 'a', encoding='utf-8') as file:
+                with open('books/文学/{}.json'.format(tag), 'a', encoding='utf-8') as file:
                     file.write(json.dumps(result, ensure_ascii=False) + ',\n')
 
 
 if __name__ == '__main__':
-    getResqutes()
+    tag_require = "绘本"
+    getRequest(tag_require)
