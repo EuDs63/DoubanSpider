@@ -23,7 +23,7 @@ def get_web_data(url, headers, proxies=[]):
     return data
 
 
-def getRequest(tag):
+def getRequest(category, tag):
     tag_utf8 = tag.encode("utf-8")
     tag_url = quote(tag_utf8)
     urls = ["https://book.douban.com/tag/{}?start={}".format(tag_url, (i)) for i in
@@ -117,10 +117,11 @@ def getRequest(tag):
                 }
                 print(result)
                 # 以json形式保存输出结果
-                with open('books/文学/{}.json'.format(tag), 'a', encoding='utf-8') as file:
+                with open('books/{}/{}.json'.format(category, tag), 'a', encoding='utf-8') as file:
                     file.write(json.dumps(result, ensure_ascii=False) + ',\n')
 
 
 if __name__ == '__main__':
-    tag_require = "文学"
-    getRequest(tag_require)
+    category_require = "流行"
+    tag_require = "青春"
+    getRequest(category_require, tag_require)

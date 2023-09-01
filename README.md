@@ -5,7 +5,7 @@
 
 ## 使用
 1. `git clone https://github.com/EuDs63/DoubanSpider.git`
-2. 修改`/searchBook.py`中的`tag_require`
+2. 修改`/searchBook.py`中的`category_require`,tag_require`
 3. 运行
 
 ## 参考
