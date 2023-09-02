@@ -1,6 +1,6 @@
 import os
 import json
-
+import datetime
 # 指定包含六个文件夹的大文件夹路径
 base_folder = 'books'
 
@@ -40,14 +40,21 @@ for folder1 in os.listdir(base_folder):
                             pass
 
 # 将所有数据保存到一个新的JSON文件中
-output_file = 'merged.json'
+output_file = 'merge/merged.json'
 # 输出的中文是url编码，暂未找到原因
 # with open(output_file, 'w',encoding='utf-8') as f:
 #     json.dump(all_data, f, indent=4)
 
-output_file2 = 'merged2.json'
-with open(output_file2, 'w', encoding='utf-8') as file:
+# 获取当前日期和时间
+current_datetime = datetime.datetime.now()
+
+# 格式化日期和时间为字符串，例如：09-02_12-34
+formatted_datetime = current_datetime.strftime("%m-%d_%H-%M")
+file_name = f"douban_{formatted_datetime}.json"
+file_path = "merge/{}".format(file_name)
+
+with open(file_path, 'w', encoding='utf-8') as file:
     file.write(json.dumps(all_data, ensure_ascii=False) + ',\n')# 需手动去除最后一行
 
 
-print(f'合并完成，结果已保存到 {output_file2}')
+print(f'合并完成，结果已保存到 {file_path}')
