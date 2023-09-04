@@ -123,5 +123,5 @@ def getRequest(category, tag):
 
 if __name__ == '__main__':
     category_require = "科技"
-    tag_require = "编程"
+    tag_require = "通信"
     getRequest(category_require, tag_require)

@@ -1,7 +1,8 @@
 # DoubanSpider
 
 ## 说明
-
+- 面向[豆瓣图书标签](https://book.douban.com/tag/)的爬虫
+- 仅作为暑期项目的基本数据资料使用
 
 ## 最终得到的文件实例
 ```json
