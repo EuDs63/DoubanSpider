@@ -25,9 +25,12 @@
 ```
 
 ## 使用
-1. `git clone https://github.com/EuDs63/DoubanSpider.git`
+1. fork 本项目到本地
+2. `git clone 你fork的仓库`
 2. 修改`/searchBook.py`中的`category_require`,tag_require`
 3. 运行`/searchBook.py`
+4. `git add, git commit`
+5. 发起pull request
 
 ## 参考
 - [Python爬虫爬取豆瓣不同分类书籍详细信息](https://blog.csdn.net/qq_41821963/article/details/105446196)
