@@ -122,6 +122,6 @@ def getRequest(category, tag):
 
 
 if __name__ == '__main__':
-    category_require = "生活"
-    tag_require = "教育"
+    category_require = "科技"
+    tag_require = "编程"
     getRequest(category_require, tag_require)
