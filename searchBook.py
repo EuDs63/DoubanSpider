@@ -122,8 +122,9 @@ def getRequest(category, tag):
 
 
 if __name__ == '__main__':
-    category_require = "流行"
-    tags = ["张小娴", "几米", "J.K.罗琳", "古龙", "校园", "沧月", "亦舒"]
+    category_require = "文化"
+    tags = ["西方哲学","回忆录","思想","数学","宗教","二战","自由主义"]
+
     fail_tags = []
     for tag in tags:
         try:
@@ -136,3 +137,4 @@ if __name__ == '__main__':
 
     if fail_tags:
         print("Failed tags:", fail_tags)
+
