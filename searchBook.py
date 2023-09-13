@@ -122,9 +122,9 @@ def getRequest(category, tag):
 
 
 if __name__ == '__main__':
-
     category_require = "文化"
     tags = ["西方哲学","回忆录","思想","数学","宗教","二战","自由主义"]
+
     fail_tags = []
     for tag in tags:
         try:
