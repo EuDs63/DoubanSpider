@@ -122,6 +122,19 @@ def getRequest(category, tag):
 
 
 if __name__ == '__main__':
-    category_require = "生活"
-    tag_require = "成长"
-    getRequest(category_require, tag_require)
+
+    category_require = "文化"
+    tags = ["西方哲学","回忆录","思想","数学","宗教","二战","自由主义"]
+    fail_tags = []
+    for tag in tags:
+        try:
+            tag_require = tag
+            getRequest(category_require, tag_require)
+        except Exception as e:
+            print("Exception {} happens for tag: {}".format(e, tag))
+            fail_tags.append(tag)
+            pass
+
+    if fail_tags:
+        print("Failed tags:", fail_tags)
+
