@@ -123,7 +123,7 @@ def getRequest(category, tag):
 
 if __name__ == '__main__':
     category_require = "流行"
-    tags = ["余秋雨","东野圭吾","言情","推理小说","日本漫画","科幻小说","三毛"]
+    tags = ["张小娴", "几米", "J.K.罗琳", "古龙", "校园", "沧月", "亦舒"]
     fail_tags = []
     for tag in tags:
         try:
