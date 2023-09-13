@@ -122,8 +122,8 @@ def getRequest(category, tag):
 
 
 if __name__ == '__main__':
-    category_require = "流行"
-    tags = ["张小娴", "几米", "J.K.罗琳", "古龙", "校园", "沧月", "亦舒"]
+    category_require = "生活"
+    tags = ["健康", "情感", "养生", "手工", "家居"]
     fail_tags = []
     for tag in tags:
         try:
@@ -132,7 +132,7 @@ if __name__ == '__main__':
         except Exception as e:
             print("Exception {} happens for tag: {}".format(e, tag))
             fail_tags.append(tag)
-            pass
+            continue
 
     if fail_tags:
         print("Failed tags:", fail_tags)
