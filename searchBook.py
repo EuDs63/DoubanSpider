@@ -123,5 +123,16 @@ def getRequest(category, tag):
 
 if __name__ == '__main__':
     category_require = "流行"
-    tag_require = "奇幻"
-    getRequest(category_require, tag_require)
+    tags = ["余秋雨","东野圭吾","言情","推理小说","日本漫画","科幻小说","三毛"]
+    fail_tags = []
+    for tag in tags:
+        try:
+            tag_require = tag
+            getRequest(category_require, tag_require)
+        except Exception as e:
+            print("Exception {} happens for tag: {}".format(e, tag))
+            fail_tags.append(tag)
+            pass
+
+    if fail_tags:
+        print("Failed tags:", fail_tags)
